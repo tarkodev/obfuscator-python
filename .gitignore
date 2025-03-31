@@ -1,0 +1,26 @@
+# Environnements virtuels
+.venv/
+env/
+ENV/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+
+# Fichiers temporaires
+*.log
+*.tmp
+*.bak
+
+# Configurations spécifiques à PyCharm / IntelliJ
+.idea/
+
+# Fichiers d’environnement
+.env
+
+# Fichiers système (Windows/macOS/Linux)
+.DS_Store
+Thumbs.db
+
+# Local
+local-*
