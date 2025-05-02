@@ -24,7 +24,8 @@ from obfuscator.transformations.add_dead_code import AddDeadCode
 from obfuscator.transformations.restructure_loops import RestructureLoops
 from obfuscator.transformations.obfuscate_strings import ObfuscateStrings, insert_helper_function
 from obfuscator.transformations.remove_all_comments import remove_all_comments
-from obfuscator.gpt_integration import call_chatgpt_for_analysis_and_code
+from obfuscator.transformations.wrap_code_base64_hex_exec import WrapCodeBase64HexExec
+from obfuscator.gpt import call_chatgpt_for_analysis_and_code
 
 # Mapping between transformation names and their corresponding classes.
 # Note: 'remove_all_comments' is handled separately before AST parsing.
@@ -33,6 +34,7 @@ TRANSFORMATIONS_MAP = {
     "restructure_loops": RestructureLoops,
     "obfuscate_strings": ObfuscateStrings,
     "add_dead_code": AddDeadCode,
+    "wrap_base64_hex_exec": WrapCodeBase64HexExec,
 }
 
 def apply_transformations(tree: ast.AST, transformations: list) -> ast.AST:
@@ -82,6 +84,13 @@ def main():
         original_source = remove_all_comments(original_source)
         # Remove the transformation from the list to avoid duplicate processing.
         args.transformations = [t for t in args.transformations if t != "remove_all_comments"]
+
+    if "wrap_base64_hex_exec" in args.transformations:
+        final_code = WrapCodeBase64HexExec().transform_source(original_source)
+        with open(args.output, "w", encoding="utf-8") as f:
+            f.write(final_code)
+        print(f"Obfuscated via base64+hex+exec → {args.output}")
+        return
 
     # Parse the (possibly cleaned) source code into an AST.
     tree = ast.parse(original_source)

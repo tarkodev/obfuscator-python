@@ -54,6 +54,9 @@ class RenameIdentifiers(ast.NodeTransformer):
             return True
         if name.startswith('__') and name.endswith('__'):
             return True
+        for t in (str, list, dict, set):
+            if hasattr(t, name):
+                return True
         return False
 
     def visit_Name(self, node: ast.Name):
