@@ -13,4 +13,4 @@ The obfuscator works by:
 
 ## Installation
 
-Soon^^
+You can run `test.py` for testing purpose^^
