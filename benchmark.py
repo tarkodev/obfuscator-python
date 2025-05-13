@@ -168,6 +168,7 @@ def process_case(
         "add_dead_code",
         "restructure_loops",
         "obfuscate_strings",
+    #   "wrap_base64_hex_exec"
     ]
 
     # 1. Obfuscation step
