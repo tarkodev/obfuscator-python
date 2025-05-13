@@ -1,0 +1,4 @@
+astor
+openai
+python-dotenv
+colorama
