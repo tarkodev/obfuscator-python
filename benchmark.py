@@ -11,8 +11,8 @@ This test script accepts optional CLI parameters. On startup, it allows passing:
 
 If --model is not provided or invalid, the user is prompted interactively to choose from --models.
 Defaults:
-  input-dir  = "benchmark-input"
-  output-dir = "benchmark-output"
+  input-dir  = "benchmark_input"
+  output-dir = "benchmark_output"
   bases      = ["palindrom", "prime", "fibonacci"]
 
 Key features:
@@ -219,8 +219,8 @@ def main() -> None:
         description="Benchmark obfuscation + GPT-deobfuscation + execution."
     )
     # Input directory flag renamed
-    parser.add_argument("--input-dir", default="benchmark-input")
-    parser.add_argument("--output-dir", default="benchmark-output")
+    parser.add_argument("--input-dir", default="benchmark_input")
+    parser.add_argument("--output-dir", default="benchmark_output")
     parser.add_argument(
         "--models",
         nargs="+",

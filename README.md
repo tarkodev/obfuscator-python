@@ -11,7 +11,7 @@
 Apply any combination of AST-based transformations:
 
 ```bash
-python -m obfuscator.main --input path/to/script.py  --output path/to/obfuscated.py --transformations remove_all_comments rename_identifiers add_dead_code restructure_loops obfuscate_strings
+python -m obfuscator.main --input ./benchmark_input/fibonacci_input.py  --output ./benchmark_output/fibonacci_obfuscated.py  --transformations remove_all_comments rename_identifiers add_dead_code restructure_loops obfuscate_strings
 ```
 
 _All transformations are optional and can be mixed or applied individually._
@@ -21,7 +21,7 @@ _All transformations are optional and can be mixed or applied individually._
 Request ChatGPT to analyze and rewrite:
 
 ```bash
-python -m obfuscator.main  --input path/to/obfuscated.py  --output path/to/deobfuscated.py  --gpt  --model gpt-4o
+python -m obfuscator.main  --input ./benchmark_output/fibonacci_obfuscated.py  --output ./benchmark_output/fibonacci_deobfuscated_gpt-4o.py  --gpt  --model gpt-4o
 ```
 
 ### 3. End-to-End Benchmark (`benchmark.py`)
@@ -29,10 +29,10 @@ python -m obfuscator.main  --input path/to/obfuscated.py  --output path/to/deobf
 Run performance and correctness tests across the pipeline:
 
 ```bash
-python benchmark.py  --input-dir benchmark-input  --output-dir benchmark-output  --models gpt-4o o4-mini
+python benchmark.py  --input-dir benchmark_input  --output-dir benchmark_output  --models gpt-4o o4-mini
 ```
 
-After completion, detailed timing and comparison reports are saved under `benchmark-output/benchmark-<model>.txt`.
+After completion, detailed timing and comparison reports are saved under `benchmark_output/benchmark-<model>.txt`.
 
 ---
 
