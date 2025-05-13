@@ -1,103 +1,45 @@
-# Function to decode a base64 encoded string, returning a UTF-8 decoded string
-def _obf_decode(s):
+# Function to decode a base64 encoded string
+def decode_base64(s):
     import base64
     return base64.b64decode(s).decode('utf-8')
 
-
-# This block is never executed because of the 'if False' statement
-# if False:
-#     _obf_decode('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==') # "Dead code at module level"
-
-
-# Class representing some functionality (e.g., Fibonacci sequence calculations)
+# Class that handles Fibonacci sequence calculations
 class FibonacciCalculator:
 
     # Method to calculate the nth Fibonacci number
-    def calculate_fibonacci(self, n: int) -> int:
-        # Unreachable code because of 'if False'
-        # if False:
-        #     print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU=')) # "This is dead code"
-
-        # Unused nested function inside a method
-        def unused_function_8622():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u') # "A useless function"
-            return 42
-
+    def fibonacci(self, n: int) -> int:
         # Base cases for the Fibonacci sequence
         if n < 2:
             return n
-        # Recursive case to calculate and return the Fibonacci number
-        return self.calculate_fibonacci(n - 1) + self.calculate_fibonacci(n - 2)
+        # Recursive call to calculate Fibonacci number
+        return self.fibonacci(n - 1) + self.fibonacci(n - 2)
 
-    # Method to generate a list of Fibonacci numbers up to a given number
-    def generate_fibonacci_sequence(self, length: int) -> list:
-        # Unreachable code because of 'if False'
-        # if False:
-        #     print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU=')) # "This is dead code"
+    # Method to generate a list of Fibonacci numbers up to n
+    def fibonacci_sequence(self, n: int) -> list:
+        # List comprehension to generate Fibonacci sequence
+        return [self.fibonacci(i) for i in range(n)]
 
-        # Unused nested function inside a method
-        def unused_function_6156():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u') # "A useless function"
-            return 42
-
-        # Return a list of Fibonacci numbers up to the specified length
-        return [self.calculate_fibonacci(i) for i in range(length)]
-
-
-# Class with a title attribute and a method to print a formatted message
+# Class that handles printing a formatted title and message
 class MessagePrinter:
 
-    # Initialize the object with a title
+    # Constructor to initialize the class with a title
     def __init__(self, title: str):
-        # Unreachable code because of 'if False'
-        # if False:
-        #     print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU=')) # "This is dead code"
-
-        # Unused nested function inside the constructor
-        def unused_function_7258():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u') # "A useless function"
-            return 42
-
         self.title = title
 
-    # Method to print a formatted message including the title and provided text
-    def print_message(self, text: str):
-        # Unreachable code because of 'if False'
-        # if False:
-        #     print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU=')) # "This is dead code"
+    # Method to print a message with the class title
+    def print_message(self, message: str):
+        print(f"[{self.title}]: {message}")
 
-        # Unused nested function inside a method
-        def unused_function_7642():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u') # "A useless function"
-            return 42
+# Main function to demonstrate Fibonacci calculation and message printing
+def main():
+    fib_calc = FibonacciCalculator()
+    message_printer = MessagePrinter(decode_base64('Rmlib25hY2NpIFByb2dyYW0='))  # "Fibonacci Program"
+    n = 35
+    fib_sequence = fib_calc.fibonacci_sequence(n)
+    message_printer.print_message(
+        f"{decode_base64('Rmlib25hY2NpIHNlcXVlbmNlIG9mIGxlbmd0aCA=')}{n}{decode_base64('ID0+IA==')}{fib_sequence}"
+    )
 
-        # Print the formatted message
-        print(f"[{self.title}]: {text}")
-
-
-# Function to demonstrate functionality, creating instances of the above classes
-def main_program():
-    # Unreachable code because of 'if False'
-    # if False:
-    #     print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU=')) # "This is dead code"
-
-    # Unused function in main
-    def unused_function_2064():
-        _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u') # "A useless function"
-        return 42
-
-    # Create a Fibonacci calculator
-    fibonacci_calculator = FibonacciCalculator()
-    # Create a message printer with a specific title
-    printer = MessagePrinter("Fibonacci Program")
-    # Define the length of the Fibonacci sequence to be generated
-    sequence_length = 35
-    # Generate the Fibonacci sequence
-    fibonacci_sequence = fibonacci_calculator.generate_fibonacci_sequence(sequence_length)
-    # Print the message with the generated Fibonacci sequence
-    printer.print_message(f"Fibonacci sequence of length {sequence_length} => {fibonacci_sequence}")
-
-
-# Execute the main program if this file is executed as a script
+# Check if the script is being run as the main program
 if __name__ == "__main__":
-    main_program()
+    main()

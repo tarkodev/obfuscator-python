@@ -1,6 +1,6 @@
 Summary for model: gpt-4o
 Case             Obf(s)  Deobf(s) Orig(s)  ObfRun(s)  DeRun(s)
 --------------------------------------------------------------
-palindrom          0.84     13.44    0.10       0.10      0.10
-prime              0.84      9.81    1.65       5.89      5.63
-fibonacci          0.92     18.09    2.39       4.50      4.26
+palindrom          0.83     12.76    0.09       0.09      0.10
+prime              0.85     16.91    1.61       5.76      5.42
+fibonacci          0.93      9.12    2.38       4.27      2.36

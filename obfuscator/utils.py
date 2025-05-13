@@ -5,7 +5,6 @@ Utility functions for file parsing and AST transformations.
 
 import ast
 
-
 def parse_file(file_path: str) -> ast.AST:
     """
     Reads a Python file and returns its abstract syntax tree (AST).

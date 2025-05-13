@@ -1,54 +1,107 @@
-# Define a function to decode a Base64 encoded string
-def _obf_decode(s):
+# Function to decode a base64 encoded string
+def decode_base64(s):
     import base64
     return base64.b64decode(s).decode('utf-8')
 
-# Define a class to perform prime-related operations
+# The following block of code will not execute due to 'if False'
+# if False:
+#     decode_base64('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==')
+
+# Class with methods to check for prime numbers and list them
 class PrimeChecker:
-    
-    # Check if a given integer is a prime number
+
+    # Method to check if a number is prime
     def is_prime(self, number: int) -> bool:
-        # Quick cases for small numbers
+        # This will not execute because of 'if False'
+        # if False:
+        #     print(decode_base64('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused nested function
+        def unused_function():
+            decode_base64('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Handles base cases for prime checking
         if number <= 1:
             return False
         if number == 2:
             return True
         if number % 2 == 0:
             return False
-        # Check divisibility by odd numbers up to sqrt(number)
-        divisor = 3
-        while divisor < int(number ** 0.5) + 1:
-            if number % divisor == 0:
+
+        # Check for factors up to the square root of the number
+        factor = 3
+        while factor < int(number ** 0.5) + 1:
+            if number % factor == 0:
                 return False
-            divisor += 2
+            factor += 2
         return True
 
-    # Return a list of prime numbers up to a given limit
-    def primes_up_to(self, limit: int) -> list:
+    # Method to return list of primes below a given number
+    def list_primes_below(self, limit: int) -> list:
+        # This will not execute because of 'if False'
+        # if False:
+        #     print(decode_base64('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused nested function
+        def unused_function():
+            decode_base64('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # List comprehension to get primes below 'limit'
         return [num for num in range(limit) if self.is_prime(num)]
 
-# Define a class to manage a title and display messages
-class MessageLogger:
+# Class that displays prime checks
+class PrimeDisplay:
 
-    # Initialize with a title
+    # Constructor to set a title
     def __init__(self, title: str):
+        # This will not execute because of 'if False'
+        # if False:
+        #     print(decode_base64('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused nested function
+        def unused_function():
+            decode_base64('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
         self.title = title
 
-    # Print a message prefixed by the title
-    def log(self, message: str):
+    # Method to print primes below a certain number
+    def show_primes(self, message: str):
+        # This will not execute because of 'if False'
+        # if False:
+        #     print(decode_base64('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused nested function
+        def unused_function():
+            decode_base64('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
         print(f"[{self.title}]: {message}")
 
-# Function to check and display prime numbers up to a limit
+# Function to run the prime checking and displaying
 def main():
+    # This will not execute because of 'if False'
+    # if False:
+    #     print(decode_base64('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+    # Unused nested function
+    def unused_function():
+        decode_base64('QSB1c2VsZXNzIGZ1bmN0aW9u')
+        return 42
+
+    # Instantiate PrimeChecker and PrimeDisplay
     prime_checker = PrimeChecker()
-    logger = MessageLogger(_obf_decode('UHJpbWUgQ2hlY2tlcg=='))  # "Prime Checker"
+    prime_display = PrimeDisplay(decode_base64('UHJpbWUgQ2hlY2tlcg=='))
     limit = 1000000
-    primes_list = prime_checker.primes_up_to(limit)
-    logger.log(
-        f"{_obf_decode('UHJpbWUgbnVtYmVycyBiZWxvdyA=')}"  # "Prime numbers below "
-        f"{limit} => {primes_list}"
+    # Obtain list of primes below 'limit'
+    primes = prime_checker.list_primes_below(limit)
+    # Show the primes below 'limit' using PrimeDisplay
+    prime_display.show_primes(
+        f"{decode_base64('UHJpbWUgbnVtYmVycyBiZWxvdyA=')}{limit}{decode_base64('ID0+IA==')}{primes}"
     )
 
-# Ensure the main function runs if this is the main module
+# Execute the main function if this script is run directly
 if __name__ == "__main__":
     main()

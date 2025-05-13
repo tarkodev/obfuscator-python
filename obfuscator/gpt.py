@@ -1,18 +1,19 @@
 # obfuscator/gpt.py
-"""
-Integration with ChatGPT for code analysis.
-This module sends the obfuscated code to the ChatGPT API to obtain:
-  1. A brief analysis (as comments).
-  2. A clean, readable, and executable Python version.
-"""
 
-import os
-import openai
-from dotenv import load_dotenv
+# This module integrates with the OpenAI ChatGPT API to analyze and de-obfuscate
+# Python code. It sends obfuscated source code to ChatGPT and retrieves both
+# a commented analysis and a clean, executable rewrite.
 
+import os                         # For interacting with environment variables
+import openai                     # OpenAI Python client for API access
+from dotenv import load_dotenv    # Utility to load .env files into os.environ
+
+# Load environment variables from a .env file in the current directory
 load_dotenv()
 
+# Retrieve the OpenAI API key from the environment
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Configure the OpenAI client with the retrieved key
 openai.api_key = OPENAI_API_KEY
 
 def call_chatgpt_for_analysis_and_code(
@@ -20,16 +21,23 @@ def call_chatgpt_for_analysis_and_code(
     model_name: str = "gpt-4o"
 ) -> str:
     """
-    Sends the obfuscated code to ChatGPT with a prompt asking for:
-      - A brief analysis in comments.
-      - A rewritten version of the code that is readable and executable.
+    Sends obfuscated Python code to ChatGPT and requests:
+      1. A brief analysis inserted as Python comments above or inline with the code.
+      2. A full rewrite of the code in a clean, readable, and executable format.
 
-    :param obfuscated_code: The obfuscated source code.
-    :return: The raw response from ChatGPT.
+    :param obfuscated_code: The obfuscated source code to analyze.
+    :param model_name: The ChatGPT model to use (default "gpt-4o").
+    :return: The raw text response from ChatGPT, expected to be valid Python code.
     """
+
+    # If no API key is provided, skip making the API call and warn in a comment
     if not OPENAI_API_KEY:
         return "# No API key found. Skipping ChatGPT analysis.\n"
 
+    # Construct the prompt that will be sent to ChatGPT:
+    # - We specify the assistant role as a Python helper.
+    # - We ask for two outputs: commented analysis and clean rewrite.
+    # - We emphasize no markdown formatting, only plain Python code.
     prompt = (
         "You are a Python assistant.\n"
         "You will receive obfuscated Python code.\n"
@@ -44,9 +52,11 @@ def call_chatgpt_for_analysis_and_code(
         f"Obfuscated code:\n{obfuscated_code}"
     )
 
+    # Send the prompt to the ChatGPT API, using the specified model and user role
     response = openai.chat.completions.create(
-        model = model_name,
+        model=model_name,
         messages=[{"role": "user", "content": prompt}],
     )
 
+    # Extract and return the content of the first message choice
     return response.choices[0].message.content
