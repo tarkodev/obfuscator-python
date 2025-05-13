@@ -11,7 +11,7 @@
 Apply any combination of AST-based transformations:
 
 ```bash
-python -m obfuscator.main --input path/to/script.py  --output path/to/obfuscated.py --transformations remove_all_comments rename_identifiers add_dead_code restructure_loops obfuscate_strings wrap_base64_hex_exec
+python -m obfuscator.main --input path/to/script.py  --output path/to/obfuscated.py --transformations remove_all_comments rename_identifiers add_dead_code restructure_loops obfuscate_strings
 ```
 
 _All transformations are optional and can be mixed or applied individually._
@@ -95,8 +95,8 @@ print(clean_code)
 
 1. **Git Clone**  
    ```bash
-   git clone https://github.com/tarkodev/obfuscator-python.git
-   cd obfuscator-python
+   git clone https://github.com/tarkodev/python-code-obfuscator.git
+   cd python-code-obfuscator
    ```
 
 2. **Environment Variables**  
