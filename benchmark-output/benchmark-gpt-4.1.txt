@@ -1,0 +1,6 @@
+Benchmark for model: gpt-4.1
+Case             Obf(s)  Deobf(s) Orig(s)  ObfRun(s)  DeRun(s)
+--------------------------------------------------------------
+palindrom          0.85     15.36    0.19       0.17      0.12
+prime              0.84      5.46    1.59       5.56      5.70
+fibonacci          0.91      5.08    2.40       4.44      2.35
