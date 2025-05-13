@@ -7,77 +7,77 @@ if False:
     _obf_decode('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==')
 
 
-class var_ieyso_1:
+class var_zdyyf_1:
 
-    def var_pjufb_2(var_uctzd_3, var_ihlaf_4: int) ->bool:
+    def var_ixoyq_2(var_uqxdn_3, var_xlivw_4: int) ->bool:
         if False:
             print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        def unused_function_3980():
+        def unused_function_8167():
             _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
-        if var_ihlaf_4 <= 1:
+        if var_xlivw_4 <= 1:
             return False
-        if var_ihlaf_4 == 2:
+        if var_xlivw_4 == 2:
             return True
-        if var_ihlaf_4 % 2 == 0:
+        if var_xlivw_4 % 2 == 0:
             return False
-        var_dewup_5 = 3
-        while var_dewup_5 < int(var_ihlaf_4 ** 0.5) + 1:
-            if var_ihlaf_4 % var_dewup_5 == 0:
+        var_lqdow_5 = 3
+        while var_lqdow_5 < int(var_xlivw_4 ** 0.5) + 1:
+            if var_xlivw_4 % var_lqdow_5 == 0:
                 return False
-            var_dewup_5 += 2
+            var_lqdow_5 += 2
         return True
 
-    def var_qomiv_6(var_uctzd_3, var_usjja_7: int) ->list:
+    def var_axfao_6(var_uqxdn_3, var_rssjs_7: int) ->list:
         if False:
             print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        def unused_function_4486():
+        def unused_function_8313():
             _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
-        return [var_dewup_5 for var_dewup_5 in range(var_usjja_7) if
-            var_uctzd_3.var_pjufb_2(var_dewup_5)]
+        return [var_lqdow_5 for var_lqdow_5 in range(var_rssjs_7) if
+            var_uqxdn_3.var_ixoyq_2(var_lqdow_5)]
 
 
-class var_nesam_8:
+class var_jdgwm_8:
 
-    def __init__(var_uctzd_3, title: str):
+    def __init__(var_uqxdn_3, title: str):
         if False:
             print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        def unused_function_1212():
+        def unused_function_9856():
             _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
-        var_uctzd_3.title = title
+        var_uqxdn_3.title = title
 
-    def var_ocbfa_9(var_uctzd_3, var_ubggu_10: str):
+    def var_serbj_9(var_uqxdn_3, var_sfxog_10: str):
         if False:
             print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        def unused_function_9059():
+        def unused_function_4246():
             _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
         print(
-            f"{_obf_decode('Ww==')}{var_uctzd_3.title}{_obf_decode('XTog')}{var_ubggu_10}"
+            f"{_obf_decode('Ww==')}{var_uqxdn_3.title}{_obf_decode('XTog')}{var_sfxog_10}"
             )
 
 
-def var_racmg_11():
+def var_hcjtp_11():
     if False:
         print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-    def unused_function_7275():
+    def unused_function_8324():
         _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
         return 42
-    var_okgyn_12 = var_ieyso_1()
-    var_cpuyk_13 = var_nesam_8(_obf_decode('UHJpbWUgQ2hlY2tlcg=='))
-    var_usjja_7 = 1000000
-    var_boyni_14 = var_okgyn_12.var_qomiv_6(var_usjja_7)
-    var_cpuyk_13.var_ocbfa_9(
-        f"{_obf_decode('UHJpbWUgbnVtYmVycyBiZWxvdyA=')}{var_usjja_7}{_obf_decode('ID0+IA==')}{var_boyni_14}"
+    var_frurx_12 = var_zdyyf_1()
+    var_abbvp_13 = var_jdgwm_8(_obf_decode('UHJpbWUgQ2hlY2tlcg=='))
+    var_rssjs_7 = 1000000
+    var_kcwwq_14 = var_frurx_12.var_axfao_6(var_rssjs_7)
+    var_abbvp_13.var_serbj_9(
+        f"{_obf_decode('UHJpbWUgbnVtYmVycyBiZWxvdyA=')}{var_rssjs_7}{_obf_decode('ID0+IA==')}{var_kcwwq_14}"
         )
 
 
 if __name__ == _obf_decode('X19tYWluX18='):
-    var_racmg_11()
+    var_hcjtp_11()

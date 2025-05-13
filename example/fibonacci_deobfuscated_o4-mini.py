@@ -1,35 +1,40 @@
-# Class to calculate Fibonacci numbers
+# Class responsible for Fibonacci computations
 class FibonacciCalculator:
-    # Return the nth Fibonacci number
+    # Recursive computation of the nth Fibonacci number
     def fib(self, n: int) -> int:
-        # Base case: return n if less than 2
         if n < 2:
             return n
-        # Recursive case: sum of previous two Fibonacci numbers
         return self.fib(n - 1) + self.fib(n - 2)
 
-    # Return a list of Fibonacci numbers of given length
-    def fib_sequence(self, length: int) -> list:
-        return [self.fib(i) for i in range(length)]
+    # Generate a list of Fibonacci numbers of given length
+    def sequence(self, count: int) -> list[int]:
+        return [self.fib(i) for i in range(count)]
 
-# Class to handle printing with a title
-class Printer:
-    # Initialize printer with a title
+# Class for printing messages with a title prefix
+class MessagePrinter:
+    # Store the title for message output
     def __init__(self, title: str):
         self.title = title
 
-    # Print the message prefixed by the title
-    def print(self, message: str):
+    # Print a formatted message with the stored title
+    def print_message(self, message: str):
         print(f"[{self.title}]: {message}")
 
-# Main entry point for the program
+# Main program logic
 def main():
-    calculator = FibonacciCalculator()
-    printer = Printer("Fibonacci Program")
-    length = 35
-    sequence = calculator.fib_sequence(length)
-    printer.print(f"Fibonacci sequence of length {length} => {sequence}")
+    # Instantiate Fibonacci calculator and message printer
+    fib_calculator = FibonacciCalculator()
+    printer = MessagePrinter("Fibonacci Program")
 
-# Execute main function if this script is run directly
+    # Define how many Fibonacci numbers to generate
+    count = 35
+
+    # Compute the Fibonacci sequence list
+    fib_sequence = fib_calculator.sequence(count)
+
+    # Output the result with a descriptive message
+    printer.print_message(f"Fibonacci sequence of length {count} => {fib_sequence}")
+
+# Execute main when run as a script
 if __name__ == "__main__":
     main()

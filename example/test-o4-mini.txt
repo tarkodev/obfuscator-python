@@ -1,0 +1,6 @@
+Summary for model: o4-mini
+Case             Obf(s)  Deobf(s) Orig(s)  ObfRun(s)  DeRun(s)
+--------------------------------------------------------------
+palindrom          0.83     23.55    0.09       0.10      0.09
+prime              0.84     21.82    1.59       5.54      5.42
+fibonacci          0.83     13.93    2.35       4.32      2.31

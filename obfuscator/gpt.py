@@ -15,7 +15,10 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 openai.api_key = OPENAI_API_KEY
 
-def call_chatgpt_for_analysis_and_code(obfuscated_code: str) -> str:
+def call_chatgpt_for_analysis_and_code(
+    obfuscated_code: str,
+    model_name: str = "gpt-4o"
+) -> str:
     """
     Sends the obfuscated code to ChatGPT with a prompt asking for:
       - A brief analysis in comments.
@@ -42,7 +45,7 @@ def call_chatgpt_for_analysis_and_code(obfuscated_code: str) -> str:
     )
 
     response = openai.chat.completions.create(
-        model="gpt-4o",
+        model = model_name,
         messages=[{"role": "user", "content": prompt}],
     )
 

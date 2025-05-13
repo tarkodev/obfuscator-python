@@ -1,8 +1,8 @@
-# Provides primality test utilities
-class PrimeTester:
-    # Check if a number is prime
+# Class for prime number related operations
+class PrimeChecker:
+    # Determine if a given number is prime
     def is_prime(self, n: int) -> bool:
-        # Numbers less than or equal to 1 are not prime
+        # Numbers less than 2 are not prime
         if n <= 1:
             return False
         # 2 is prime
@@ -11,46 +11,45 @@ class PrimeTester:
         # Even numbers greater than 2 are not prime
         if n % 2 == 0:
             return False
-        # Test odd divisors up to sqrt(n)
-        i = 3
-        while i <= int(n ** 0.5) + 1:
-            # If divisible by any i, not prime
-            if n % i == 0:
+        # Check odd divisors up to square root of n
+        divisor = 3
+        # Continue while divisor does not exceed sqrt(n)
+        while divisor <= int(n ** 0.5) + 1:
+            # If divisor divides n evenly, n is not prime
+            if n % divisor == 0:
                 return False
-            i += 2
-        # No divisors found, prime
+            divisor += 2
+        # No divisors found; n is prime
         return True
 
-    # Generate list of primes below a given limit
+    # Generate a list of prime numbers below a given limit
     def primes_below(self, limit: int) -> list:
-        # Return list comprehension of prime numbers < limit
+        # Use list comprehension to collect primes in range
         return [i for i in range(limit) if self.is_prime(i)]
 
-
-# Simple printer class with a title header
-class Printer:
-    # Initialize with a title
+# Class for printing messages with a title
+class TitlePrinter:
+    # Store the title for messages
     def __init__(self, title: str):
         self.title = title
 
-    # Print message with formatted title
+    # Print a formatted message with the title prefix
     def print_message(self, message: str):
         print(f"[{self.title}]: {message}")
 
-
-# Main execution function
+# Main function to run the prime checking and output
 def main():
-    # Instantiate prime tester and printer
-    tester = PrimeTester()
-    printer = Printer("Prime Checker")
-    # Set upper limit for prime generation
+    # Instantiate the prime checker
+    checker = PrimeChecker()
+    # Instantiate the printer with a descriptive title
+    printer = TitlePrinter("Prime Checker")
+    # Define the upper limit for prime generation
     limit = 1000000
-    # Generate primes below the limit
-    primes = tester.primes_below(limit)
-    # Print the result message
+    # Generate all primes below the limit
+    primes = checker.primes_below(limit)
+    # Print the result
     printer.print_message(f"Prime numbers below {limit} => {primes}")
 
-
-# Run main if script is executed directly
+# Execute main if this script is run directly
 if __name__ == "__main__":
     main()

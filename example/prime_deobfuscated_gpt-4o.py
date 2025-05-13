@@ -1,121 +1,58 @@
-# Import the base64 module for decoding base64 strings.
-def _obf_decode(s):
+# Define a function to decode a base64 encoded string
+def decode_base64_string(s):
     import base64
-    # Decode a base64 encoded string and convert it to a UTF-8 string
     return base64.b64decode(s).decode('utf-8')
 
-# The if False statement is a placeholder to prevent code execution.
-# Decoded: Dead code at module level 
-if False:
-    _obf_decode('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==')
-
-# A class that contains methods related to prime number checking and generation
+# Define a class for prime number operations
 class PrimeChecker:
-
     # Method to check if a number is prime
-    def is_prime(var_rdvnm_3, number: int) -> bool:
-        # Placeholder for dead code
-        # Decoded: This is dead code
-        if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
-
-        # Placeholder for an unused function
-        def unused_function_8688():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
-            return 42
-
-        # Check if the number is less than or equal to 1 
+    def is_prime(self, number: int) -> bool:
+        # Return False for numbers less than or equal to 1
         if number <= 1:
             return False
-        # Check if the number is 2 (first prime number)
+        # Return True for 2 as it's the smallest prime number
         if number == 2:
             return True
-        # Check if the number is even
+        # Return False for even numbers greater than 2
         if number % 2 == 0:
             return False
-        # Start checking for factors from 3
-        var_fcctb_5 = 3
-        # Check if there are any factors up to the square root of the number
-        while var_fcctb_5 < int(number ** 0.5) + 1:
-            if number % var_fcctb_5 == 0:
+        # Start checking for factors from 3 upwards in odd increments
+        factor = 3
+        while factor < int(number ** 0.5) + 1:
+            # If a factor is found, return False
+            if number % factor == 0:
                 return False
-            # Check only odd numbers
-            var_fcctb_5 += 2
+            factor += 2
+        # If no factors are found, return True indicating a prime number
         return True
 
-    # Method to generate a list of prime numbers below a given limit
-    def generate_primes(var_rdvnm_3, limit: int) -> list:
-        # Placeholder for dead code
-        # Decoded: This is dead code
-        if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+    # Method to find all prime numbers below a certain limit
+    def primes_below(self, limit: int) -> list:
+        # Return a list of prime numbers below the specified limit
+        return [num for num in range(limit) if self.is_prime(num)]
 
-        # Placeholder for an unused function
-        def unused_function_2142():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
-            return 42
-
-        # Use a list comprehension to generate prime numbers below the limit
-        return [var_fcctb_5 for var_fcctb_5 in range(limit) if var_rdvnm_3.is_prime(var_fcctb_5)]
-
-# Class to display results with a title
+# Define a class for displaying results
 class Display:
-
-    # Initializer to set the title
+    # Initialization method for the Display class
     def __init__(self, title: str):
-        # Placeholder for dead code
-        # Decoded: This is dead code
-        if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
-
-        # Placeholder for an unused function
-        def unused_function_5066():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
-            return 42
-
-        # Set the title attribute
         self.title = title
 
-    # Method to display a message with the title
-    def show(self, message: str):
-        # Placeholder for dead code
-        # Decoded: This is dead code
-        if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
-
-        # Placeholder for an unused function
-        def unused_function_6169():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
-            return 42
-
-        # Print the title and message
+    # Method to print a formatted message
+    def show_message(self, message: str):
         print(f"[{self.title}]: {message}")
 
-# Main function to execute the program logic
+# Main execution function
 def main():
-    # Placeholder for dead code
-    # Decoded: This is dead code
-    if False:
-        print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
-
-    # Placeholder for an unused function
-    def unused_function_9083():
-        _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
-        return 42
-
-    # Create an instance of the PrimeChecker class
     prime_checker = PrimeChecker()
-    # Create an instance of the Display class with the title "Prime Checker"
-    display = Display(_obf_decode('UHJpbWUgQ2hlY2tlcg=='))
-
-    # Set the limit to one million
+    display = Display(decode_base64_string('UHJpbWUgQ2hlY2tlcg=='))
     limit = 1000000
-    # Generate prime numbers below the limit
-    primes = prime_checker.generate_primes(limit)
-    
+    # Generate a list of prime numbers below the limit
+    prime_numbers_below_limit = prime_checker.primes_below(limit)
     # Display the result
-    display.show(f"Prime numbers below {limit} => {primes}")
+    display.show_message(
+        f"Prime numbers below {limit} => {prime_numbers_below_limit}"
+    )
 
-# Execute the main function if this module is run as a script
+# Check if the script is running as the main program
 if __name__ == "__main__":
     main()

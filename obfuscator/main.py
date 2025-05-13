@@ -62,6 +62,11 @@ def main():
                         help="List of transformations to apply (e.g., rename_identifiers, add_dead_code, etc.)")
     parser.add_argument("--gpt", action="store_true",
                         help="If set, skip local transformations and send the input code directly to GPT for analysis")
+    parser.add_argument(
+         "--model",
+        default = "gpt-4o",
+           help = "Nom du modèle à utiliser pour l’appel GPT (ex: gpt-4o, o1-mini)"
+                     )
     args = parser.parse_args()
 
     # Read the original source code from the input file.
@@ -71,7 +76,7 @@ def main():
     # If the --gpt flag is set, bypass all local transformations.
     if args.gpt:
         # Directly send the original source to GPT integration.
-        final_response = call_chatgpt_for_analysis_and_code(original_source)
+        final_response = call_chatgpt_for_analysis_and_code(original_source, model_name = args.model)
         with open(args.output, "w", encoding="utf-8") as file:
             file.write(final_response)
         print(f"Final file (analysis + GPT code): {args.output}")

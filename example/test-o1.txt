@@ -1,0 +1,6 @@
+Summary for model: o1
+Case             Obf(s)  Deobf(s) Orig(s)  ObfRun(s)  DeRun(s)
+--------------------------------------------------------------
+palindrom          0.85     44.03    0.10       0.10      0.10
+prime              0.83     16.24    1.59       5.61      5.60
+fibonacci          0.84     30.94    2.32       4.41      2.33
