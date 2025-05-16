@@ -1,40 +1,29 @@
-# Class responsible for Fibonacci computations
-class FibonacciCalculator:
-    # Recursive computation of the nth Fibonacci number
-    def fib(self, n: int) -> int:
-        if n < 2:
-            return n
-        return self.fib(n - 1) + self.fib(n - 2)
+# Compute Fibonacci number recursively (original var_cpyqz_2)
+def fibonacci(n: int) -> int:
+    if n < 2:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
-    # Generate a list of Fibonacci numbers of given length
-    def sequence(self, count: int) -> list[int]:
-        return [self.fib(i) for i in range(count)]
+# Generate the Fibonacci sequence of given length (original var_qztin_5)
+def fibonacci_sequence(length: int) -> list[int]:
+    return [fibonacci(i) for i in range(length)]
 
-# Class for printing messages with a title prefix
-class MessagePrinter:
-    # Store the title for message output
+# Class handling title and printing (original var_ozbuk_8)
+class Program:
     def __init__(self, title: str):
         self.title = title
 
-    # Print a formatted message with the stored title
-    def print_message(self, message: str):
+    # Print a message prefixed with the program title (original var_tuwmd_9)
+    def print_message(self, message: str) -> None:
         print(f"[{self.title}]: {message}")
 
-# Main program logic
-def main():
-    # Instantiate Fibonacci calculator and message printer
-    fib_calculator = FibonacciCalculator()
-    printer = MessagePrinter("Fibonacci Program")
+# Main execution flow (original var_cgihi_11)
+def main() -> None:
+    length = 35
+    sequence = fibonacci_sequence(length)
+    program = Program("Fibonacci Program")
+    program.print_message(f"Fibonacci sequence of length {length} => {sequence}")
 
-    # Define how many Fibonacci numbers to generate
-    count = 35
-
-    # Compute the Fibonacci sequence list
-    fib_sequence = fib_calculator.sequence(count)
-
-    # Output the result with a descriptive message
-    printer.print_message(f"Fibonacci sequence of length {count} => {fib_sequence}")
-
-# Execute main when run as a script
+# Entry point check (original if __name__ == '__main__')
 if __name__ == "__main__":
     main()

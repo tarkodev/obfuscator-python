@@ -1,46 +1,95 @@
-# Decodes a base64-encoded string as UTF-8
-def decode_base64_str(s):
+# Helper function to decode base64-encoded strings
+def _obf_decode(s):
     import base64
+    # Decodes base64-encoded bytes to a UTF-8 string
     return base64.b64decode(s).decode('utf-8')
 
+# This code block does not execute because condition is always False
+if False:
+    _obf_decode('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==')
 
-# Class to compute Fibonacci-related operations
+# Class representing Fibonacci calculations
 class FibonacciCalculator:
 
-    # Recursive Fibonacci calculation
+    # Computes the nth Fibonacci number recursively
     def fibonacci(self, n: int) -> int:
-        # Computes nth Fibonacci number
+        if False:
+            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function, kept from obfuscated code
+        def unused_function_1800():
+            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Base cases: 0 or 1
         if n < 2:
             return n
+        # Recursive case: Fibonacci(n-1) + Fibonacci(n-2)
         return self.fibonacci(n - 1) + self.fibonacci(n - 2)
 
-    # Returns a list of Fibonacci numbers up to count n
-    def fibonacci_sequence(self, count: int) -> list:
-        # Builds a list of Fibonacci numbers from 0 to count - 1
-        return [self.fibonacci(i) for i in range(count)]
+    # Generates a list of Fibonacci numbers up to n (exclusive)
+    def fibonacci_sequence(self, n: int) -> list:
+        if False:
+            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
 
+        # Unused function, kept from obfuscated code
+        def unused_function_3217():
+            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
 
-# Class representing a program with a title and a printing method
-class Program:
+        # Returns a list of Fibonacci numbers from 0 to n-1
+        return [self.fibonacci(i) for i in range(n)]
 
-    # Initializes with a given title
+# Class for displaying a titled message
+class TitledPrinter:
+
+    # Initializes the printer with a title
     def __init__(self, title: str):
+        if False:
+            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function, kept from obfuscated code
+        def unused_function_5284():
+            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
         self.title = title
 
-    # Prints a formatted line with the title and message
-    def display(self, message: str):
+    # Prints the message with title in a specific format
+    def print_message(self, message: str):
+        if False:
+            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function, kept from obfuscated code
+        def unused_function_5164():
+            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Prints the message in format: [Title]: message
         print(f"[{self.title}]: {message}")
 
-
-# Main function to run the Fibonacci program
+# Main routine to demonstrate Fibonacci printing
 def main():
+    if False:
+        print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+    # Unused function, kept from obfuscated code
+    def unused_function_3753():
+        _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+        return 42
+
+    # Create an instance that generates Fibonacci numbers
     fib_calculator = FibonacciCalculator()
-    program = Program("Fibonacci Program")
-    count = 35
-    sequence = fib_calculator.fibonacci_sequence(count)
-    program.display(f"Fibonacci sequence of length {count} => {sequence}")
+    # Create a titled printer with decoded base64 title
+    printer = TitledPrinter(_obf_decode('Rmlib25hY2NpIFByb2dyYW0='))
+    length = 35
+    # Get the first 'length' Fibonacci numbers
+    sequence = fib_calculator.fibonacci_sequence(length)
+    # Print the titled message with the Fibonacci sequence
+    printer.print_message(
+        f"{_obf_decode('Rmlib25hY2NpIHNlcXVlbmNlIG9mIGxlbmd0aCA=')}{length}{_obf_decode('ID0+IA==')}{sequence}"
+    )
 
-
-# Entry point check for script execution
-if __name__ == "__main__":
+# Only run main if executed as a script
+if __name__ == _obf_decode('X19tYWluX18='):
     main()

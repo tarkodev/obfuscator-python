@@ -1,56 +1,102 @@
-# Define a function to decode a base64 encoded string
-def _obf_decode(s):
+# Function to decode a base64 encoded string
+def decode_base64_string(s):
     import base64
-    # Decode the base64 string and return its UTF-8 representation
+    # Decode the base64 string and return the UTF-8 decoded string
     return base64.b64decode(s).decode('utf-8')
 
 
-# Define a class with methods for calculating Fibonacci numbers
+# Class that calculates Fibonacci numbers
 class FibonacciCalculator:
 
-    # Recursive Fibonacci calculation method
-    def fibonacci(self, n: int) -> int:
-        # Return n if n is less than 2, as base cases
+    # Method to calculate the nth Fibonacci number
+    def calculate_fibonacci(self, n: int) -> int:
+        # Function to print debug message if condition is True (currently always False)
+        if False:
+            print(decode_base64_string('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function (debug purpose)
+        def unused_function():
+            decode_base64_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Base cases for Fibonacci sequence
         if n < 2:
             return n
-        # Recursive call to calculate the Fibonacci series
-        return self.fibonacci(n - 1) + self.fibonacci(n - 2)
+        # Recursive calculation of Fibonacci numbers
+        return self.calculate_fibonacci(n - 1) + self.calculate_fibonacci(n - 2)
 
-    # Method to return a list of Fibonacci numbers up to a given count
-    def fibonacci_sequence(self, count: int) -> list:
-        # List comprehension to generate a list of Fibonacci numbers
-        return [self.fibonacci(i) for i in range(count)]
+    # Method to generate a list of Fibonacci numbers up to a given length
+    def generate_fibonacci_sequence(self, length: int) -> list:
+        # Function to print debug message if condition is True (currently always False)
+        if False:
+            print(decode_base64_string('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function (debug purpose)
+        def unused_function():
+            decode_base64_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # List comprehension to generate Fibonacci sequence
+        return [self.calculate_fibonacci(i) for i in range(length)]
 
 
-# Define a Printer class to display messages
-class Printer:
+# Class for handling program title and printing messages
+class SequencePrinter:
 
     # Constructor to initialize the title
     def __init__(self, title: str):
+        # Function to print debug message if condition is True (currently always False)
+        if False:
+            print(decode_base64_string('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function (debug purpose)
+        def unused_function():
+            decode_base64_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Store the title
         self.title = title
 
-    # Method to print the formatted message
-    def print_message(self, message: str):
-        # Print the title and message
+    # Method to print a formatted message
+    def print_sequence(self, message: str):
+        # Function to print debug message if condition is True (currently always False)
+        if False:
+            print(decode_base64_string('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Unused function (debug purpose)
+        def unused_function():
+            decode_base64_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Print the formatted sequence
         print(f"[{self.title}]: {message}")
 
 
-# Main function to demonstrate the functionality
-def main_program():
+# Function to showcase the Fibonacci sequence generation and printing
+def show_fibonacci_sequence():
+    # Function to print debug message if condition is True (currently always False)
+    if False:
+        print(decode_base64_string('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+    # Unused function (debug purpose)
+    def unused_function():
+        decode_base64_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
+        return 42
+
     # Create an instance of FibonacciCalculator
     fibonacci_calculator = FibonacciCalculator()
-    # Create a Printer instance with a decoded title
-    printer = Printer(_obf_decode('Rmlib25hY2NpIFByb2dyYW0='))
-    # Define the length of the Fibonacci sequence to calculate
-    length_of_sequence = 35
-    # Calculate the Fibonacci sequence
-    fibonacci_sequence = fibonacci_calculator.fibonacci_sequence(length_of_sequence)
-    # Use printer to display the Fibonacci sequence
-    printer.print_message(
-        f"Fibonacci sequence of length {length_of_sequence} => {fibonacci_sequence}"
+    # Create an instance of SequencePrinter with a decoded title
+    sequence_printer = SequencePrinter(decode_base64_string('Rmlib25hY2NpIFByb2dyYW0='))
+    # Define the sequence length
+    sequence_length = 35
+    # Generate the Fibonacci sequence
+    fibonacci_sequence = fibonacci_calculator.generate_fibonacci_sequence(sequence_length)
+    # Print the generated sequence with a formatted message
+    sequence_printer.print_sequence(
+        f"{decode_base64_string('Rmlib25hY2NpIHNlcXVlbmNlIG9mIGxlbmd0aCA=')}{sequence_length}{decode_base64_string('ID0+IA==')}{fibonacci_sequence}"
     )
 
 
-# Execute the main_program function if this script is the main program
-if __name__ == "__main__":
-    main_program()
+# Check if the script is the main program and run the sequence generation
+if __name__ == decode_base64_string('X19tYWluX18='):
+    show_fibonacci_sequence()

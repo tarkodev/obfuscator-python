@@ -1,98 +1,120 @@
-# The function below converts the given string from base64-encoded bytes to a UTF-8 decoded string.
-def _obf_decode(s):
+# This function decodes a base64 string (used in dead code blocks)
+def decode_string(s):
+    # Import base64 module
     import base64
+    # Decode from base64 to UTF-8
     return base64.b64decode(s).decode('utf-8')
 
-# This block is never executed (if False).
+# This condition is never true; shows an example of dead code
 if False:
-    _obf_decode('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==')
+    # Decodes: "Dead code at module level"
+    decode_string('RGVhZCBjb2RlIGF0IG1vZHVsZSBsZXZlbA==')
 
-# This class contains methods related to prime number checking and listing.
-class var_cgote_1:
+# This class provides prime checking methods
+class PrimeChecker:
 
-    # This method checks if a given integer (var_mjart_4) is prime.
-    def var_xlreh_2(var_cchlu_3, var_mjart_4: int) -> bool:
-        # This block is never executed (if False).
+    # Checks if a given integer is prime
+    def is_prime(self, n: int) -> bool:
+        # Another dead code block
         if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+            # Decodes: "This is dead code"
+            print(decode_string('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        # This nested function is never called.
-        def unused_function_5513():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+        # A useless function that's never called
+        def unused_function_7524():
+            # Decodes: "A useless function"
+            decode_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
 
-        if var_mjart_4 <= 1:
+        # Prime check logic
+        if n <= 1:
             return False
-        if var_mjart_4 == 2:
+        if n == 2:
             return True
-        if var_mjart_4 % 2 == 0:
+        if n % 2 == 0:
             return False
-
-        var_zvyrl_5 = 3
-        while var_zvyrl_5 < int(var_mjart_4 ** 0.5) + 1:
-            if var_mjart_4 % var_zvyrl_5 == 0:
+        i = 3
+        while i < int(n ** 0.5) + 1:
+            if n % i == 0:
                 return False
-            var_zvyrl_5 += 2
+            i += 2
         return True
 
-    # This method returns a list of prime numbers up to var_fzqif_7.
-    def var_bnjeb_6(var_cchlu_3, var_fzqif_7: int) -> list:
-        # This block is never executed (if False).
+    # Returns a list of prime numbers below the given limit
+    def primes_below(self, limit: int) -> list:
+        # Another dead code block
         if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+            # Decodes: "This is dead code"
+            print(decode_string('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        # This nested function is never called.
-        def unused_function_6104():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+        # Another useless function
+        def unused_function_8980():
+            # Decodes: "A useless function"
+            decode_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
 
-        return [var_zvyrl_5 for var_zvyrl_5 in range(var_fzqif_7) if var_cchlu_3.var_xlreh_2(var_zvyrl_5)]
+        # Generate list of primes below the limit
+        return [x for x in range(limit) if self.is_prime(x)]
 
-# This class demonstrates how to print messages with a title.
-class var_ujnky_8:
+# This class prints messages with a given title
+class TitlePrinter:
 
-    # The constructor saves the title.
-    def __init__(var_cchlu_3, title: str):
-        # This block is never executed (if False).
+    # Initializes with a title
+    def __init__(self, title: str):
+        # Another dead code block
         if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+            # Decodes: "This is dead code"
+            print(decode_string('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-        # This nested function is never called.
-        def unused_function_3741():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
-            return 42
-        var_cchlu_3.title = title
-
-    # This method prints a message with the stored title.
-    def var_ihbmm_9(var_cchlu_3, var_oqfhe_10: str):
-        # This block is never executed (if False).
-        if False:
-            print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
-
-        # This nested function is never called.
-        def unused_function_2638():
-            _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+        # Another useless function
+        def unused_function_2239():
+            # Decodes: "A useless function"
+            decode_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
             return 42
 
-        print(f"{_obf_decode('Ww==')}{var_cchlu_3.title}{_obf_decode('XTog')}{var_oqfhe_10}")
+        # Store the given title
+        self.title = title
 
-# This function ties everything together by instantiating the classes and printing prime numbers.
-def var_lmogo_11():
-    # This block is never executed (if False).
+    # Prints a message prefixed by the title
+    def print_message(self, message: str):
+        # Another dead code block
+        if False:
+            # Decodes: "This is dead code"
+            print(decode_string('VGhpcyBpcyBkZWFkIGNvZGU='))
+
+        # Another useless function
+        def unused_function_4155():
+            # Decodes: "A useless function"
+            decode_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
+            return 42
+
+        # Print in readble format
+        print(f"[{self.title}]: {message}")
+
+# Main function coordinating the process
+def main():
+    # Another dead code block
     if False:
-        print(_obf_decode('VGhpcyBpcyBkZWFkIGNvZGU='))
+        # Decodes: "This is dead code"
+        print(decode_string('VGhpcyBpcyBkZWFkIGNvZGU='))
 
-    # This nested function is never called.
-    def unused_function_7667():
-        _obf_decode('QSB1c2VsZXNzIGZ1bmN0aW9u')
+    # Another useless function
+    def unused_function_5347():
+        # Decodes: "A useless function"
+        decode_string('QSB1c2VsZXNzIGZ1bmN0aW9u')
         return 42
 
-    var_mgquc_12 = var_cgote_1()
-    var_kgawu_13 = var_ujnky_8(_obf_decode('UHJpbWUgQ2hlY2tlcg=='))
-    var_fzqif_7 = 1000000
-    var_cglnt_14 = var_mgquc_12.var_bnjeb_6(var_fzqif_7)
-    var_kgawu_13.var_ihbmm_9(f"{_obf_decode('UHJpbWUgbnVtYmVycyBiZWxvdyA=')}{var_fzqif_7}{_obf_decode('ID0+IA==')}{var_cglnt_14}")
+    # Create a prime checker object
+    prime_checker = PrimeChecker()
+    # Create a title printer with a specific title
+    printer = TitlePrinter("Prime Checker")
+    # Define a limit for prime calculation
+    limit = 1000000
+    # Get all prime numbers below the limit
+    primes = prime_checker.primes_below(limit)
+    # Display the result
+    printer.print_message(f"Prime numbers below {limit} => {primes}")
 
-# This block runs the function if this file is the main entry point.
-if __name__ == _obf_decode('X19tYWluX18='):
-    var_lmogo_11()
+# Standard Python entry point check
+if __name__ == "__main__":
+    main()
